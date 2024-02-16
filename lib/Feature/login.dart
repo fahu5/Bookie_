@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Color enabled = const Color.fromARGB(255, 63, 56, 89);
   Color enabledtxt = Colors.white;
   Color deaible = Colors.grey;
-  Color backgroundColor = const Color(0xFF1F1A30);
+  Color backgroundColor = const Color(0xFFAB47BC);
   bool isPasswordVisible = true;
   FormData? selected;
 
@@ -36,29 +36,50 @@ TextEditingController emailController = TextEditingController();
             end: Alignment.bottomRight,
             stops: const [0.1, 0.4, 0.7, 0.9],
             colors: [
-              const Color(0xFF4b4293).withOpacity(0.8),
-              const Color(0xFF4b4293),
-              const Color(0xFF08418e),
-              const Color(0xFF08418e),
+              const Color(0xFFCE93D8).withOpacity(0.8),
+              const Color(0xFFBA68C8).withOpacity(0.8),
+              const Color(0xFFBA68C8),
+              const Color(0xFFBA68C8),
+             // const Color(0xFFAB47BC),
+            //  const Color(0xFFAB47BC),
             ],
           ),
           image: DecorationImage(
             fit: BoxFit.cover,
+
             colorFilter: ColorFilter.mode(
               const Color(0x000fffff).withOpacity(0.2),
               BlendMode.dstATop,
             ),
             image: const AssetImage("assets/login_screen_pic.png"),
+
           ),
+
+
         ),
+
         child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const Text(
+                  'Bookie',
+                  textAlign: TextAlign.start,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                      letterSpacing: 0.5,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold
+                  ),
+
+                ),
+                const SizedBox(height: 15),
                 Card(
                   elevation: 5,
-                  color: const Color(0xFFabd3fa).withOpacity(0.4),
+                  color: const Color(0xFFCE93D8).withOpacity(0.4),
                   child: Container(
                     width: 400,
                     padding: const EdgeInsets.all(40.0),
@@ -84,6 +105,7 @@ TextEditingController emailController = TextEditingController();
                           child: Text(
                             "Please sign in to continue",
                             style: TextStyle(
+                              fontSize: 17,
                               color: Colors.white,
                               letterSpacing: 0.5,
                             ),
