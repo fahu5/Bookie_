@@ -28,8 +28,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  pin_code_fields: ^7.3.0  # Use the latest version available
   flutter:
     sdk: flutter
+
+
+
 
 
 

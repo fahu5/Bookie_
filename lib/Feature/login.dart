@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Core/Animation/fade_animation.dart';
-
+import 'forgotpass_page.dart';
+import 'registration_page.dart';
 enum FormData {
   email,
   password,
@@ -15,16 +16,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  Color enabled = const Color.fromARGB(255, 63, 56, 89);
+  Color enabled = const Color.fromARGB(255, 63, 56, 84);
   Color enabledtxt = Colors.white;
   Color deaible = Colors.grey;
-  Color backgroundColor = const Color(0xFFAB47BC);
+  Color backgroundColor = const Color(0xFFAB47BC).withOpacity(0.5);
   bool isPasswordVisible = true;
   FormData? selected;
 
 
-TextEditingController emailController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +43,7 @@ TextEditingController emailController = TextEditingController();
               const Color(0xFFBA68C8).withOpacity(0.8),
               const Color(0xFFBA68C8),
               const Color(0xFFBA68C8),
-             // const Color(0xFFAB47BC),
-            //  const Color(0xFFAB47BC),
+
             ],
           ),
           image: DecorationImage(
@@ -213,7 +215,7 @@ TextEditingController emailController = TextEditingController();
                             // Implement your login logic here
                           },
                           style: TextButton.styleFrom(
-                            backgroundColor: const Color(0xFF2697FF),
+                            backgroundColor: const Color(0xFF91D3B9),
                             padding: const EdgeInsets.symmetric(
                                 vertical: 14.0, horizontal: 80),
                             shape: RoundedRectangleBorder(
@@ -221,7 +223,7 @@ TextEditingController emailController = TextEditingController();
                             ),
                           ),
                           child: const Text(
-                            "Login",
+                            "Sign in",
                             style: TextStyle(
                               color: Colors.white,
                               letterSpacing: 0.5,
@@ -230,11 +232,90 @@ TextEditingController emailController = TextEditingController();
                             ),
                           ),
                         ),
+
                       ],
                     ),
                   ),
                 ),
-                // ... Rest of your code ...
+                const SizedBox( height: 20,),
+               FadeAnimation(
+                   delay: 1,
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     mainAxisSize: MainAxisSize.min,
+                     children: [
+
+                       TextButton(
+                         onPressed: () {
+                           // Navigate to the registration screen
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotpassScreen()),
+                           );
+                         },
+                         style: TextButton.styleFrom(
+                           padding: const EdgeInsets.symmetric(
+                             vertical: 3.0,
+                             horizontal: 8,
+                           ),
+                           shape: RoundedRectangleBorder(
+                             borderRadius: BorderRadius.circular(2.0),
+                           ),
+                         ),
+                         child: const Text(
+                           "Can't remember password?",
+                           style: TextStyle(
+                             color: Colors.white,
+                             letterSpacing: 0.5,
+                             fontSize: 16.0,
+                             fontWeight: FontWeight.bold,
+                           ),
+                         ),
+                       ),
+                     ],
+                   ),
+               ),
+                const SizedBox( height: 5,),
+               FadeAnimation(
+                  delay: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Text(
+                        "Not a member?",
+                          style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          // Navigate to the registration screen
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupScreen()),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 3.0,
+                            horizontal: 8,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(2.0),
+                          ),
+                        ),
+                        child: const Text(
+                          "Sign Up now",
+                          style: TextStyle(
+                            color: Color(0xFF91D3B4),
+                            letterSpacing: 0.5,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
               ],
             ),
           ),
