@@ -18,10 +18,10 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState  extends State<SignupScreen>{
-  Color enabled = const Color.fromARGB(255, 63, 56, 84);
+  Color enabled = const Color(0xFF454A64);
   Color enabledtxt = Colors.white;
   Color deaible = Colors.grey;
-  Color backgroundColor = const Color(0xFFAB47BC).withOpacity(0.5);
+  Color backgroundColor = const Color(0xFFBA68CF).withOpacity(0.9);
 
   bool isPasswordev = true;
 
