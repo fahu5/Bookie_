@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-
 import '../Core/Animation/fade_animation.dart';
-
-import 'login.dart';
 import 'pincodeVerification.dart';
 
 enum FormData{
@@ -19,7 +15,7 @@ class ForgotpassScreen extends StatefulWidget {
 class _ForgotpassScreen  extends State<ForgotpassScreen>{
   Color enabled = const Color(0xFF454A64);
   Color enabledtxt = Colors.white;
-  Color deaible = Colors.grey;
+  Color deaible = Colors.white70;
   Color backgroundColor = const Color(0xFFBA68CF).withOpacity(0.9);
 
   bool isPasswordev = true;

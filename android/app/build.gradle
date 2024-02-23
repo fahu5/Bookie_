@@ -1,3 +1,4 @@
+
 plugins {
     id "com.android.application"
     id "kotlin-android"
@@ -5,7 +6,8 @@ plugins {
     id("com.google.gms.google-services")
 }
 
-def localProperties = new java.util.Properties()
+
+def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
     localPropertiesFile.withReader('UTF-8') { reader ->
@@ -27,6 +29,10 @@ android {
     namespace "com.bookie.bookiee"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
+    lintOptions {
+        warning 'unchecked'
+        warning 'deprecation'
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -50,6 +56,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -68,4 +75,6 @@ flutter {
 dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
