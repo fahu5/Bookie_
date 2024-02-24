@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'Feature/login.dart';
-import 'Feature/registration_page.dart';
+import 'Login_Feature/login.dart';
+import 'Login_Feature/registration_page.dart';
 
 
 void main() async {

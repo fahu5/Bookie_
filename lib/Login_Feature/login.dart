@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../Core/Animation/fade_animation.dart';
+import '../widget/footer.dart';
 import 'forgotpass_page.dart';
 import 'registration_page.dart';
-import '../Homepage/home_page.dart';
+
 
 enum FormData {
   email,
@@ -128,13 +129,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () {
                             Navigator.pushReplacement(
                               context,
-                              MaterialPageRoute(builder: (context) => Homepage(
-                                currentIndex: 0, // Provide the appropriate index
-                                onTabSelected: (index) {
-                                  // Handle tab selection
-                                },
+                              MaterialPageRoute(builder: (context) => const NavigationMenu(),
                               )
-                              ),
+
                             );
                           },
                           style: TextButton.styleFrom(

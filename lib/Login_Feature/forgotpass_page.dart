@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Core/Animation/fade_animation.dart';
-import 'pincodeVerification.dart';
+import 'pincode_verification.dart';
 
 enum FormData{
   email
