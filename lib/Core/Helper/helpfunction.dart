@@ -7,6 +7,8 @@ class HelperFunctions {
     final brightness = Theme.of(context).brightness;
     return brightness == Brightness.dark;
   }
+
+
 }
 class HText {
   static String get homeAppBarTitle => 'Bookie';
@@ -15,6 +17,9 @@ class HText {
 }
 class HColors {
   static const Color textcolor = Colors.deepPurpleAccent;
+  static Color Dark = Colors.deepPurpleAccent;
+
+  static Color light =  Colors.transparent;
 }
 class DeviceUtils {
   static double getScreenWidth(BuildContext context) {
@@ -27,6 +32,10 @@ class DeviceUtils {
   static double getAppBarHeight(){
     return kToolbarHeight;
   }
+  static bool isDarkMode(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark;
+  }
+
 }
 
 class HeaderappbarTheme{

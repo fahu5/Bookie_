@@ -4,7 +4,7 @@ class CurvedWidget extends CustomClipper<Path>{
   @override
   Path getClip(Size size){
     var path = Path();
-    path.lineTo(8, size.height);
+    path.lineTo(0, size.height);
 
     final firstCurve = Offset(0, size.height-20);
     final lastCurve = Offset(30, size.height-20);
@@ -17,6 +17,8 @@ class CurvedWidget extends CustomClipper<Path>{
     final thirdfirstCurve = Offset(size.width, size.height-20);
     final thirdlastCurve = Offset(size.width, size.height);
     path.quadraticBezierTo(thirdfirstCurve.dx, thirdfirstCurve.dy, thirdlastCurve.dx, thirdlastCurve.dy);
+
+
 
     path.lineTo(size.width, 0);
     path.close();
@@ -32,3 +34,9 @@ class CurvedWidget extends CustomClipper<Path>{
   }
 }
 
+
+
+//path.lineTo(0, size.height * 0.75);
+//path.quadraticBezierTo(size.width*0.25, size.height*0.5, size.width*0.5, size.height*0.75);
+// path.quadraticBezierTo(size.width*0.5, size.height*1, size.width, size.height*0.75);
+//  path.lineTo(size.width, 0);
