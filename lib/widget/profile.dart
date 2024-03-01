@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../profile_full_page/profile_pagedesign.dart';
 
-class Notificationbar extends StatelessWidget {
-  const Notificationbar({
+class ProfileBar extends StatelessWidget {
+  const ProfileBar({
     super.key, required this.iconColor, required this.onPressed,
   });
 
@@ -12,26 +13,16 @@ class Notificationbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        IconButton(onPressed: () {},
-          icon: const Icon(Icons.notification_add_outlined),
-          color: Colors.white,),
-        Positioned(
-            right: 1,
-            child:  Container(
-              width: 18,
-              height: 18,
-              decoration: BoxDecoration(
-                  color: Colors.pink,
-                  borderRadius: BorderRadius.circular(25.0)
-              ),
-             child: Center(
-               child: Text(
-                 '2',
-               style: Theme.of(context).textTheme.labelLarge?.apply(color: Colors.black87, fontSizeFactor: 0.5),
-               ),
-             ),
-            )
+        IconButton(onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ProfileScreen()),
+          );
+        },
+          icon: const Icon(Icons.account_circle, size: 37,),
+          color: Colors.white,
         ),
+
       ],
     );
   }

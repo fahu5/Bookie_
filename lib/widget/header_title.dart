@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Core/Helper/helpfunction.dart';
 import 'header.dart';
-import 'notification.dart';
+import 'profile.dart';
 
 class HeaderTitle extends StatelessWidget {
   const HeaderTitle({
@@ -31,7 +31,7 @@ class HeaderTitle extends StatelessWidget {
 
         ],
       ),
-      actions:  [Notificationbar(onPressed: (){}, iconColor: Colors.white)],
+      actions:  [ProfileBar(onPressed: (){}, iconColor: Colors.white)],
 
 
     );

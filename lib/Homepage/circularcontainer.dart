@@ -8,7 +8,8 @@ class CircularContainer extends StatelessWidget {
     this.height = 400,
     this.padding = 8.0,
     this.radius = 400.0,
-    this.backgroundcolor = Colors.deepPurpleAccent, required Color backgroundColor,
+    this.backgroundcolor = Colors.deepPurpleAccent,
+    required Color backgroundColor,
   });
 
   final double? width;

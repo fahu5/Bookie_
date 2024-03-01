@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Core/Animation/fade_animation.dart';
-import '../widget/footer.dart';
+import '../widget/float_navigationbar.dart';
 import 'forgotpass_page.dart';
 import 'registration_page.dart';
 

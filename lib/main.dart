@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'Login_Feature/custom_splash.dart';
 import 'Login_Feature/login.dart';
 import 'Login_Feature/registration_page.dart';
 
@@ -24,13 +25,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Login Page',
+      title: 'Bookie',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
       initialRoute: '/', // You can set the initial route if needed
       routes: {
-        '/': (context) => const LoginScreen(),
+        '/': (context) =>  CustomSplashScreen(),
+        '/signin': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
 
 

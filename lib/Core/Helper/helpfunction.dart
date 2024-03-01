@@ -64,3 +64,71 @@ class HeaderappbarTheme{
   );
 
 }
+
+class HSizes{
+  //padding and margin
+  static const double xs= 4.0;
+  static const double sm= 8.0;
+  static const double md= 16.0;
+  static const double lg= 24.0;
+  static const double xl= 32.0;
+
+  //icon size
+  static const double iconxs= 12.0;
+  static const double iconsm= 16.0;
+  static const double iconmd= 24.0;
+  static const double iconlg= 32.0;
+
+
+  //font size
+  static const double fontsm= 14.0;
+  static const double fontmd= 16.0;
+  static const double fontlg= 18.0;
+
+  //button size
+  static const double buttonheight= 18.0;
+  static const double buttonradius= 12.0;
+  static const double buttonwidth= 120.0;
+  static const double buttonelavation= 4.0;
+
+  //appbar height
+  static const double appbarheight= 18.0;
+
+  //default spacing section
+  static const double defaultspace= 24.0;
+  static const double spacebtwitems= 16.0;
+  static const double spacebtwsection= 16.0;
+
+  //border radius
+  static const double borderradiusSM= 4.0;
+  static const double borderradiusMD= 8.0;
+  static const double borderradiusLG= 12.0;
+
+  //divider height
+  static const double dividerheight= 1.0;
+
+}
+
+class User {
+  final String imagePath;
+  final String name;
+  final String email;
+  final String about;
+  final bool isDarkMode;
+
+  const User({
+    required this.imagePath,
+    required this.name,
+    required this.email,
+    required this.about,
+    required this.isDarkMode,
+  });
+}
+
+Widget buildDivider() => const SizedBox(
+  width: double.infinity,
+  child: Divider(
+    color: Colors.black,
+  ),
+);
+
