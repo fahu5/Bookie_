@@ -11,6 +11,11 @@ enum FormData {
   password,
   confirmPassword,
 }
+enum Gender {
+  male,
+  female,
+  others,
+}
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -38,6 +43,8 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController genderController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+
+  Gender? _selectedGender;
 
   void handleSignup() async {
     try {
@@ -170,13 +177,15 @@ class _SignupScreenState extends State<SignupScreen> {
                           hint: 'Password',
                           type: FormData.password,
                         ),
-                        const SizedBox(height: 20,),
+                        const SizedBox(height: 25,),
                         buildPasswordInputField(
                           controller: confirmPasswordController,
-                          hint: 'Confirm password',
-                          type: FormData.confirmPassword,
+                          hint: 'ConfirmPassword',
+                          type: FormData.password,
                         ),
                         const SizedBox(height: 25,),
+                       // buildGenderSelection(),
+                       // const SizedBox(height: 20,),
                         FadeAnimation(
                           delay: 1,
                           child: TextButton(
@@ -289,6 +298,63 @@ class _SignupScreenState extends State<SignupScreen> {
     );
   }
 
+  Widget buildGenderSelection() {
+    return Column(
+      children: [
+        const Text(
+          'Gender',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.white),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Radio(
+              value: Gender.male,
+              groupValue: _selectedGender,
+              onChanged: (Gender? value) {
+                setState(() {
+                  _selectedGender = value;
+                });
+              },
+            ),
+            const Text(
+                'Male',
+                style: TextStyle(fontSize: 12, color: Colors.white),
+            ),
+            Radio(
+              value: Gender.female,
+              groupValue: _selectedGender,
+              onChanged: (Gender? value) {
+                setState(() {
+                  _selectedGender = value;
+                });
+              },
+            ),
+            const Text(
+              'Female',
+              style: TextStyle(fontSize: 12, color: Colors.white),
+            ),
+            Radio(
+
+              value: Gender.others,
+              groupValue: _selectedGender,
+              onChanged: (Gender? value) {
+                setState(() {
+                  _selectedGender = value;
+                });
+              },
+            ),
+            const Text(
+                'Others',
+              style: TextStyle( fontSize: 12, color: Colors.white),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
   Widget buildPasswordInputField({
     required TextEditingController controller,
     required String hint,
@@ -351,3 +417,4 @@ class _SignupScreenState extends State<SignupScreen> {
     );
   }
 }
+

@@ -47,7 +47,7 @@ class _UserButtonState extends State<UserButton> {
             _usernameController.text,
             style: const TextStyle(color: Colors.black),
           ),
-          TextButton(
+        /*  TextButton(
             onPressed: () {
               setState(() {
                 if (_isEditing) {
@@ -69,7 +69,7 @@ class _UserButtonState extends State<UserButton> {
                     Icon(Icons.edit, color: Colors.black),
               ],
             ),
-          ),
+          ),*/
         ],
       ),
     );

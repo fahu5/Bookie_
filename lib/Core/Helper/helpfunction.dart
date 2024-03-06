@@ -17,9 +17,24 @@ class HText {
 }
 class HColors {
   static const Color textcolor = Colors.deepPurpleAccent;
-  static Color Dark = Colors.deepPurpleAccent;
+  static Color Dark = Colors.black;
 
-  static Color light =  Colors.transparent;
+  static Color light =  Colors.white;
+}
+class Himage{
+  //home page icon
+  static const String audiobookicon='assets/audiobook_icon.png';
+  static const String classicbookicon='assets/classics_icon.png';
+  static const String fictionbookicon='assets/fiction_icon.png';
+  static const String nonfictionbookicon='assets/Non-fictionbook_icon.png';
+  static const String romancebookicon='assets/romancebook_icon.png';
+  static const String novelbookicon='assets/novelbook_icon.png';
+  static const String actionbookicon='assets/icon/actionbook_icon.png';
+  static const String seemoreicon='assets/novelbook_icon.png';
+
+  //google icon for sign in page
+  static const String googleicon='assets/google_icon.png';
+
 }
 class DeviceUtils {
   static double getScreenWidth(BuildContext context) {

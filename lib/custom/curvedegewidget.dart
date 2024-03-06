@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 
 class CircularContainer extends StatelessWidget {
-  const CircularContainer({super.key, required this.backgroundColor});
+  const CircularContainer({super.key, required this.backgroundColor, required int width, required int height});
 
   final Color backgroundColor;
 

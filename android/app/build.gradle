@@ -32,6 +32,7 @@ android {
     lintOptions {
         warning 'unchecked'
         warning 'deprecation'
+        disable 'Deprecated'
     }
 
     compileOptions {

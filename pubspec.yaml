@@ -28,6 +28,13 @@ dependencies:
 
   flutter_native_splash: ^2.3.10
 
+  dropdown_textfield: ^1.0.8
+  drop_down_search_field: ^1.0.3
+  dropdown_button2: ^2.3.9
+  carousel_slider: ^4.2.1
+  flutter_reorderable_grid_view: ^4.0.0
+  griddelegate_fixedcrossaxiscount: ^0.0.1
+
 
 
 dev_dependencies:
@@ -40,3 +47,16 @@ flutter:
   assets:
     - assets/login_screen_pic.png
     - assets/User_Avatar.png
+    - assets/icon/actionbook_icon.png
+    - assets/icon/audiobook_icon.png
+    - assets/icon/classics_icon.png
+    - assets/icon/fiction_icon.png
+    - assets/icon/Non-fictionbook_icon.png
+    - assets/icon/google_icon.png
+    - assets/icon/novelbook_icon.png
+    - assets/icon/romancebook_icon.png
+    - assets/icon/poetry_icon.png
+    - assets/icon/crimefiction_book_icon.png
+    - assets/icon/thrillerbook_icon.png
+    - assets/books/The_Help.jpg
+
