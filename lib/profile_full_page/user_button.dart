@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserButton extends StatefulWidget {
-  const UserButton({Key? key}) : super(key: key);
+  const UserButton({super.key});
 
   @override
   _UserButtonState createState() => _UserButtonState();
@@ -9,7 +9,7 @@ class UserButton extends StatefulWidget {
 
 class _UserButtonState extends State<UserButton> {
   late TextEditingController _usernameController;
-  bool _isEditing = false;
+  final bool _isEditing = false;
 
   @override
   void initState() {

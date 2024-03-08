@@ -12,6 +12,7 @@ class HeaderTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return HeaderAppbar(
       title: Column(
+
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(HText.homeAppBarTitle,

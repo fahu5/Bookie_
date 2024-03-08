@@ -22,7 +22,7 @@ class CircularContainer extends StatelessWidget {
 }
 
 class Curveedge extends StatelessWidget {
-  const Curveedge({Key? key});
+  const Curveedge({super.key});
 
   @override
   Widget build(BuildContext context) {

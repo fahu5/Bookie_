@@ -2,8 +2,8 @@ import 'package:bookiee/Core/Helper/helpfunction.dart';
 import 'package:flutter/material.dart';
 
 class CircularImage extends StatelessWidget {
-  const CircularImage({
-    Key? key,
+  const CircularImage({super.key, 
+
     this.fit = BoxFit.cover,
     required this.image,
     this.isNetworkImage = false,

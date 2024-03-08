@@ -1,23 +1,28 @@
-import 'package:bookiee/Books_manage/books_gridview.dart';
+import 'package:bookiee/Core/Helper/helpfunction.dart';
+import 'package:bookiee/custom/section_header.dart';
 import 'package:flutter/material.dart';
+import '../Books_manage/book page.dart';
+import '../Books_manage/booksgrid_layoutformat.dart';
 import '../Books_manage/category_list.dart';
+import '../Core/Helper/book_list.dart';
 import '../custom/primary_headercontainer.dart';
 import '../widget/header_title.dart';
 import '../widget/searchbar.dart';
+import 'GridView_Books.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({Key? key});
+  const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header title
-            PrimaryHeaderContainer(
+            const PrimaryHeaderContainer(
               child: Column(
                 children: [
+
                   HeaderTitle(),
                   SizedBox(height: 5.0),
                   // Search bar
@@ -42,15 +47,22 @@ class Homepage extends StatelessWidget {
 
             ),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(HSizes.defaultspace),
               child: Column(
                 children: [
-                 BooksGrid(),
+                  const SectionHeader(title: 'Discover Books',),
+                  const SizedBox(height: 2.0),
+                  BooksGridLayout(
+                    itemCount: bookDataList.length,
+                    itemBuilder: (context, index) => BooksGrid(
+                      bookData: bookDataList[index], detailsList: [detailsList[index]],
+                    ),
+                    ),
+
+
                 ],
               ),
-            )
-
-
+            ),
           ],
         ),
       ),

@@ -34,7 +34,7 @@ class CategoriesList extends StatelessWidget {
                           // Handle category tap
                         },
                       );
-                    };
+                    }
                   }
       ),
     )

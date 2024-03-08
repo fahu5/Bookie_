@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/', // You can set the initial route if needed
       routes: {
-        '/': (context) =>  CustomSplashScreen(),
+        '/': (context) =>  const CustomSplashScreen(),
         '/signin': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
 

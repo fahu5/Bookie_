@@ -4,14 +4,14 @@ import '../Core/Helper/helpfunction.dart';
 
 class HeaderAppbar extends StatelessWidget implements PreferredSizeWidget {
   const HeaderAppbar({
-    Key? key,
+    super.key,
     this.title,
     this.actions,
     this.leadingIcon,
     this.leadingOnPressed,
     this.showBackArrow = false,
     this.automaticallyImplyLeading = true, // Added default value
-  }) : super(key: key);
+  });
 
   final Widget? title;
   final List<Widget>? actions;

@@ -16,7 +16,7 @@ class PrimaryHeaderContainer extends StatelessWidget {
         color: Colors.deepPurpleAccent,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
-          height: 350,
+          height: 380,
           child: Stack(
             children: [
               Positioned(top: -150, right: -250, child: CircularContainer(backgroundColor: HColors.textcolor.withOpacity(0.1))),

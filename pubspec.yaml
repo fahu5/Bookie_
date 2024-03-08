@@ -10,9 +10,12 @@ dependencies:
   pin_code_fields: ^8.0.1
   flutter:
     sdk: flutter
+  pdf: ^3.10.8
+  syncfusion_flutter_pdfviewer: ^24.2.8
+
   firebase_core: ^2.25.4
   firebase_auth: ^4.17.5
-  cloud_firestore: ^4.15.5
+  cloud_firestore: ^4.15.7
   get: ^4.3.8
 
   line_awesome_flutter: ^2.0.0
@@ -31,10 +34,10 @@ dependencies:
   dropdown_textfield: ^1.0.8
   drop_down_search_field: ^1.0.3
   dropdown_button2: ^2.3.9
+
   carousel_slider: ^4.2.1
   flutter_reorderable_grid_view: ^4.0.0
   griddelegate_fixedcrossaxiscount: ^0.0.1
-
 
 
 dev_dependencies:
@@ -59,4 +62,16 @@ flutter:
     - assets/icon/crimefiction_book_icon.png
     - assets/icon/thrillerbook_icon.png
     - assets/books/The_Help.jpg
+    - assets/books/Dopamine-Detox.jpg
+    - assets/books/Hopeless.jpg
+    - assets/books/brida.jpg
+    - assets/books/The alchemist.jpg
+    - assets/books/like the following river.jpg
+    - assets/books_pdf/the_help_-_kathryn_stockett.pdf
+    - assets/books_pdf/Dopamine Detox.pdf
+    - assets/books_pdf/Hopeless.pdf
+    - assets/books_pdf/The-Alchemist-PDF-Book-In-English-By-Paulo-Coelho.pdf
+    - assets/books_pdf/brida_paulo_chaulo.pdf
+    - assets/books_pdf/like_the_following_river.pdf
+
 

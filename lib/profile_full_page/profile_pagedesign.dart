@@ -1,13 +1,12 @@
 import 'package:bookiee/profile_full_page/profile_list.dart';
 import 'package:bookiee/profile_full_page/user_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../Core/Helper/helpfunction.dart';
 import 'appbar_widget.dart';
 import 'numbers_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key});
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

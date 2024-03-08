@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 import 'books_title.dart';
 
-class BooksGrid extends StatelessWidget {
-  const BooksGrid({Key? key});
+class BooksGrids extends StatelessWidget {
+  const BooksGrids({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +50,21 @@ class BooksGrid extends StatelessWidget {
                           maxLines: 1,
                           style: Theme.of(context).textTheme.labelSmall,
                         ),
-                        //const SizedBox(width: HSizes.xs,),
-                        // Icon(Icon.)
                       ],
                     ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min, // Wrap the stars within available space
+                      children: [
+                        // Loop to create individual star icons
+                        for (int i = 0; i < 5; i++)
+                          Icon(
+                            Icons.star,
+                            color: i < 3 ? Colors.amber : Colors.grey, // Set color based on rating
+                            size: 16,
+                          ),
+                      ],
+                    ),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -61,8 +72,8 @@ class BooksGrid extends StatelessWidget {
                           decoration: const BoxDecoration(
                             color: Colors.deepPurple,
                             borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(2),
-                              bottomRight: Radius.circular(5),
+                              topLeft: Radius.circular(12),
+                              bottomRight: Radius.circular(16),
                             ),
                           ),
                           child: const SizedBox(
@@ -77,6 +88,7 @@ class BooksGrid extends StatelessWidget {
                     ),
                   ],
                 ),
+
               ),
             ),
           ],

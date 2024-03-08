@@ -4,8 +4,8 @@ import '../Core/Helper/helpfunction.dart';
 
 class Searchbox extends StatelessWidget {
   const Searchbox({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

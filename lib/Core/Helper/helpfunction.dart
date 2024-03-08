@@ -122,6 +122,8 @@ class HSizes{
   //divider height
   static const double dividerheight= 1.0;
 
+  static const double gridViewSpacing =16.0;
+
 }
 
 class User {

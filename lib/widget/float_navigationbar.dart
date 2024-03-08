@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Core/Helper/helpfunction.dart';
 import '../Homepage/home.dart';
+import '../Mybook/bookmark.dart';
 
 
 class NavigationMenu extends StatelessWidget {
-  const NavigationMenu({Key? key});
+  const NavigationMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class NavigationMenu extends StatelessWidget {
              NavigationDestination(icon: Icons.menu_book_outlined, label: ''),
              NavigationDestination(icon: Icons.gamepad_outlined, label: ''),
              NavigationDestination(icon: Icons.home, label: ''),
-             NavigationDestination(icon: Icons.post_add, label: ''),
+             NavigationDestination(icon: Icons.message_outlined, label: ''),
              NavigationDestination(icon: Icons.messenger, label: ''),
           ],
         ),
@@ -41,7 +42,7 @@ class NavigationController extends GetxController {
   final RxBool darkMode = false.obs;
 
   final screens = [
-    Container(color: Colors.deepPurpleAccent),
+    const  BookListScreen(savedBooks: [], favoriteBooks: [],),
     Container(color: Colors.deepPurpleAccent),
     const Homepage(),
     Container(color: Colors.deepPurpleAccent),
