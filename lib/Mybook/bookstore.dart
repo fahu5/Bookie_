@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../widget/header_title.dart';
 import 'bookmark.dart';
 
 class MyBook extends StatelessWidget {
-  const MyBook({super.key});
+  const MyBook({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: SingleChildScrollView(
           child: Column(
-           children: [
-            HeaderTitle(),
-             SizedBox(height: 5,),
-             BookListScreen(savedBooks: [], favoriteBooks: [],),
-
-          ]
-         ),
+            children: [
+              const HeaderTitle(),
+              const SizedBox(height: 5),
+              BookListScreen(
+                savedBooksList: Provider.of<SavedBookList>(context),
+                favoriteBookList: Provider.of<FavoriteBookList>(context),
+              ),
+            ],
+          ),
         ),
-    );
+      );
   }
 }

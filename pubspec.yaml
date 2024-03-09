@@ -38,6 +38,8 @@ dependencies:
   carousel_slider: ^4.2.1
   flutter_reorderable_grid_view: ^4.0.0
   griddelegate_fixedcrossaxiscount: ^0.0.1
+  provider: ^6.1.2
+  device_info_plus: ^9.1.2
 
 
 dev_dependencies:

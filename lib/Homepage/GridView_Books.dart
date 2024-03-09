@@ -1,5 +1,8 @@
 import 'package:bookiee/Core/Helper/helpfunction.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+
 import '../Books_manage/book page.dart';
 import '../Books_manage/books_title.dart';
 
@@ -21,11 +24,11 @@ class BookData {
 
 class BooksGrid extends StatelessWidget {
   const BooksGrid({
-    Key? key,
+    super.key,
     required this.bookData,
     this.onTap,
     required this.detailsList,
-  }) : super(key: key);
+  });
 
   final BookData bookData;
   final VoidCallback? onTap;
@@ -39,11 +42,12 @@ class BooksGrid extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BookPage(
-              openBookDetailsData: detailsList.firstWhere(
-                    (details) => details.title == bookData.title,
-              ),
-            ),
+            builder: (context) =>
+                BookPage(
+                  openBookDetailsData: detailsList.firstWhere(
+                        (details) => details.title == bookData.title,
+                  ),
+                ),
           ),
         );
       },
@@ -82,8 +86,10 @@ class BooksGrid extends StatelessWidget {
                               bookData.author,
                               overflow: TextOverflow.fade,
                               maxLines: 1,
-                              style:
-                              Theme.of(context).textTheme.labelSmall,
+                              style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .labelSmall,
                             ),
                           ],
                         ),
@@ -97,7 +103,7 @@ class BooksGrid extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            buildAddToLIstIcon(context),
+                            buildAddToListIcon(context, bookData),
                           ],
                         ),
                       ],
@@ -112,14 +118,13 @@ class BooksGrid extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: dark
-                      ? Colors.black.withOpacity(0.9)
-                      : Colors.white.withOpacity(0.9),
+                  color: dark ? Colors.black.withOpacity(0.9) : Colors.white.withOpacity(0.9),
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                  },
                   icon: const Icon(
-                    Icons.favorite,
+                   Icons.favorite,
                     color: Colors.red,
                   ),
                 ),
@@ -130,58 +135,61 @@ class BooksGrid extends StatelessWidget {
       ),
     );
   }
-}
 
-Widget buildRatingWidget(double rating) {
-  return Row(
-    mainAxisSize: MainAxisSize.min,
-    children: [
-      for (int i = 0; i < 5; i++)
-        Icon(
-          Icons.star,
-          color: i < rating ? Colors.amber : Colors.grey,
-          size: 16,
+  Widget buildRatingWidget(double rating) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (int i = 0; i < 5; i++)
+          Icon(
+            Icons.star,
+            color: i < rating ? Colors.amber : Colors.grey,
+            size: 16,
+          ),
+      ],
+    );
+  }
+
+
+
+  GestureDetector buildAddToListIcon(BuildContext context, BookData bookData,) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Add to List'),
+              content: const Text('You tapped the button to add the book to the list.'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      },
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Colors.deepPurple,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(12),
+            bottomRight: Radius.circular(16),
+          ),
         ),
-    ],
-  );
-}
-
-Widget buildAddToListIcon(BuildContext context, BookData bookData) {
-  return GestureDetector(
-    onTap: () {
-      _saveBookToFolder(context, bookData);
-    },
-    child: Container(
-      decoration: const BoxDecoration(
-        color: Colors.deepPurple,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(12),
-          bottomRight: Radius.circular(16),
+        child: const SizedBox(
+          width: 35,
+          height: 35,
+          child: Center(
+            child: Icon(Icons.add, color: Colors.white),
+          ),
         ),
       ),
-      child: const SizedBox(
-        width: 35,
-        height: 35,
-        child: Center(
-          child: Icon(Icons.add, color: Colors.white),
-        ),
-      ),
-    ),
-  );
-}
-
-void _saveBookToFolder(BuildContext context, BookData bookData) {
-  // Assume you have a SavedBookList instance
-  Provider.of<SavedBookList>(context, listen: false).addBook(SavedBook(title: bookData.title));
-
-  // Show a snackbar to indicate that the book has been saved
-  ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text('Book added to Saved Books'),
-      duration: Duration(seconds: 2),
-    ),
-  );
-}
-}
+    );
+  }
 
 }

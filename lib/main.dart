@@ -15,6 +15,7 @@ void main() async {
     projectId: 'bookiee-300cc',
   );
   await Firebase.initializeApp(options: options);
+
   runApp(const MyApp());
 }
 

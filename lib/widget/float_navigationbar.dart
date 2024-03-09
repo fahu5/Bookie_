@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Core/Helper/helpfunction.dart';
 import '../Homepage/home.dart';
-import '../Mybook/bookmark.dart';
+import '../Mybook/bookstore.dart';
 
 
 class NavigationMenu extends StatelessWidget {
@@ -24,11 +24,12 @@ class NavigationMenu extends StatelessWidget {
              color: controller.darkMode.value ? Colors.deepPurpleAccent.withOpacity(0.1) : Colors.black.withOpacity(0.1),
              onTap: (index) => controller.selectedIndex.value = index,
              items: const [
-             NavigationDestination(icon: Icons.menu_book_outlined, label: ''),
-             NavigationDestination(icon: Icons.gamepad_outlined, label: ''),
-             NavigationDestination(icon: Icons.home, label: ''),
-             NavigationDestination(icon: Icons.message_outlined, label: ''),
-             NavigationDestination(icon: Icons.messenger, label: ''),
+               NavigationDestination(icon: Icons.home, label: ''),
+               NavigationDestination(icon: Icons.menu_book_outlined, label: ''),
+               NavigationDestination(icon: Icons.gamepad_outlined, label: ''),
+               NavigationDestination(icon: Icons.feed_outlined, label: ''),
+               NavigationDestination(icon: Icons.message_outlined, label: ''),
+
           ],
         ),
       ),
@@ -42,9 +43,9 @@ class NavigationController extends GetxController {
   final RxBool darkMode = false.obs;
 
   final screens = [
-    const  BookListScreen(savedBooks: [], favoriteBooks: [],),
-    Container(color: Colors.deepPurpleAccent),
     const Homepage(),
+    const MyBook(),
+    Container(color: Colors.deepPurpleAccent),
     Container(color: Colors.deepPurpleAccent),
     Container(color: Colors.deepPurpleAccent),
   ];
