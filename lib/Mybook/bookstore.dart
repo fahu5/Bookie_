@@ -8,7 +8,12 @@ class MyBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SavedBookList()),
+        ChangeNotifierProvider(create: (context) => FavoriteBookList()),
+      ],
+      child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -21,6 +26,7 @@ class MyBook extends StatelessWidget {
             ],
           ),
         ),
-      );
+      ),
+    );
   }
 }

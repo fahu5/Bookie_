@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../main.dart';
 
 class Book {
   final String title;
@@ -56,6 +58,8 @@ class BookListScreen extends StatefulWidget {
 class _BookListScreenState extends State<BookListScreen> {
   @override
   Widget build(BuildContext context) {
+    final savedBooksList = Provider.of<SavedBookList>(context);
+    final favoriteBookList = Provider.of<FavoriteBookList>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Book'),

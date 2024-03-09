@@ -1,11 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'Login_Feature/custom_splash.dart';
 import 'Login_Feature/login.dart';
 import 'Login_Feature/registration_page.dart';
-
+import 'Mybook/bookmark.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
 
   FirebaseOptions options = const FirebaseOptions(
@@ -24,22 +27,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Bookie',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SavedBookList()),
+        ChangeNotifierProvider(create: (context) => FavoriteBookList()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Bookie',
+        theme: ThemeData(
+          primarySwatch: Colors.purple,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const CustomSplashScreen(),
+          '/signin': (context) => const LoginScreen(),
+          '/signup': (context) => const SignupScreen(),
+          // Add more routes as needed, including those for MyBook features
+        },
       ),
-      initialRoute: '/', // You can set the initial route if needed
-      routes: {
-        '/': (context) =>  const CustomSplashScreen(),
-        '/signin': (context) => const LoginScreen(),
-        '/signup': (context) => const SignupScreen(),
-
-
-        // Add more routes as needed
-      },
-
     );
   }
 }
